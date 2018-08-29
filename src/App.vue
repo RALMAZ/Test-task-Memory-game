@@ -1,16 +1,20 @@
 <template>
   <div id="app">
     <vs-row vs-w="12">
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
+      <vs-col
+        vs-type="flex"
+        vs-justify="center"
+        vs-align="center"
+        vs-w="12"
+       >
         <img src="../src/assets/header.png">
-      </vs-col>
-      <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-w="12">
       </vs-col>
     </vs-row>
 
     <vs-row vs-w="12">
         <vs-col
-          v-for="(item, index) in dataCard" :key="index"
+          v-for="(item, index) in dataCard"
+          :key="index"
           vs-type="flex"
           vs-justify="center"
           vs-align="center"
