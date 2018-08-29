@@ -1,6 +1,10 @@
 import Vue from 'vue'
-import App from './App.vue'
+import Vuesax from 'vuesax'
+import 'vuesax/dist/vuesax.css'
+Vue.use(Vuesax)
+
 import store from './store'
+import App from './App.vue'
 
 Vue.config.productionTip = false
 
