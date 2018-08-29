@@ -7,7 +7,6 @@ export default new Vuex.Store({
   state: {
     time: 0,
     moves: 0,
-    currentOpen: [],
     cards: [
       {
         id: 1,
@@ -70,11 +69,5 @@ export default new Vuex.Store({
         img: '15.png'
       }
     ]
-  },
-  mutations: {
-
-  },
-  actions: {
-
   }
 })
