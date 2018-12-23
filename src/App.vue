@@ -8,11 +8,6 @@
         vs-w="12"
        >
         <img src="../src/assets/header.png">
-        <img src="../src/assets/header.png">
-        <img src="../src/assets/header.png">
-        <img src="../src/assets/header.png">
-        <img src="../src/assets/header.png">
-        <img src="../src/assets/header.png">
       </vs-col>
     </vs-row>
 
