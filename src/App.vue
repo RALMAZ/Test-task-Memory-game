@@ -144,6 +144,9 @@
   html {
     background-color:#292e2a;
   }
+  body {
+    font-size: 10px;
+  }
   .vs-card {
     background-color:white;
     min-height: 200px;
