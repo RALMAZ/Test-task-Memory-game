@@ -145,7 +145,8 @@
     background-color:#292e2a;
   }
   body {
-    font-size: 10px;
+    font-size: 1px;
+    create: ttsfs;
   }
   .vs-card {
     background-color:white;
