@@ -65,84 +65,70 @@
 
   export default {
     name: 'App',
-    data() {
-      return {
-        current: [],
-        dataCard: []
-      }
-    },
+    data:() ({
+      current: [],
+      dataCard: []
+    }),
     computed: mapState({
-      time: state => state.time,
-      moves: state => state.moves,
-      cards: state => state.cards
+      'time',
+      'moves',
+      'cards'
     }),
     methods: {
       initCard(id) {
-        this.current[this.current.length] = id;
+        this.current[this.current.length] = id
       },
       hideCard() {
         if (this.current.length > 2) {
-          let idCardHide = this.current[0];
-          this.current.splice(0, 1);
-
-          for (let index = 0; index < this.dataCard.length; index++) {
-            let element = this.dataCard[index];
-            if (idCardHide == element.id) {
-              element.show = false;
-            }
-          }
+          let idCardHide = this.current[0]
+          this.current.splice(0, 1)
+          
+          this.dataCard.find(e => e.id == idCardHide).show = false
         }
       },
       shuffleCards(array) {
         for (var i = array.length - 1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1));
-            var temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
+            var j = Math.floor(Math.random() * (i + 1))
+            var temp = array[i]
+            array[i] = array[j]
+            array[j] = temp
         }
-        return array;
+        return array
       },
       activeCard() {
-        let id = this.current[0];
-        let id2 = this.current[1];
+        let id = this.current[0]
+        let id2 = this.current[1]
 
-        let test = Number(id) - Number(15);
-        let test2 = Number(id) + Number(15);
-        let test3 = Number(id2) - Number(15);
-        let test4 = Number(id2) + Number(15);
-          
-        for (let i = 0; i < this.dataCard.length; i++) {
-          let el = this.dataCard[i];
-          let ready = false;
-          let ready2 = false;
+        let test = Number(id) - Number(15)
+        let test2 = Number(id) + Number(15)
+        let test3 = Number(id2) - Number(15)
+        let test4 = Number(id2) + Number(15)
+        
+        this.dataCard.forEach(e => {
+          let ready = false
+          let ready2 = false
 
-          if (el.id == id) {
-            if (test == id2 || test2 == id2) {
-              ready = true;
-            }
+          if (e.id == id) {
+            if (test == id2 || test2 == id2) ready = true
           }
 
-          if (el.id == id2) {
-            if (test3 == id || test4 == id) {
-              ready2 = true;
-            }
+          if (e.id == id2) {
+            if (test3 == id || test4 == id) ready2 = true
           }
 
-          if (ready || ready2) {
-            this.dataCard[i].active = true;
-          }
-        }
+          if (ready || ready2) e.active = true
+        })
       }
     },
     mounted() {
-      this.dataCard = this.shuffleCards(this.cards);
+      this.dataCard = this.shuffleCards(this.cards)
     }
   }
 </script>
 
 <style>
   html {
-    background-color:#292e2a;
+    background-color: #292e2a;
   }
   body {
     font-size: 1px;
@@ -151,7 +137,7 @@
     sfsfsf: 500000px;
   }
   .vs-card {
-    background-color:white;
+    background-color: white;
     min-height: 200px;
   }
   .img {
